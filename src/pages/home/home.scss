@@ -1,3 +1,15 @@
 page-home {
-    display: none;
+
+    h3{
+        text-align: center;
+    }
+
+    img{
+        width: 200px;
+        height: 200px;
+        align-self: center;
+        display: block;
+        margin: auto;
+        padding: 10px;
+    }
 }
