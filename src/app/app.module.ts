@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from '@angular/common/http';
+import { AuthService } from '../services/AuthService';
 
 
 //Decorator -> anotação que tem configurações para alterar a classe, o que faz 
@@ -34,6 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
     SplashScreen,
     CategoriaService,
     ErrorInterceptorProvider,
+    AuthService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
