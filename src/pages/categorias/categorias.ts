@@ -1,6 +1,7 @@
 import { CategoriaService } from "./../../services/domain/categoriaService";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { CategoriaDto } from "../../models/Categoria.dto";
 
 /**
  * Generated class for the CategoriasPage page.
@@ -21,10 +22,14 @@ export class CategoriasPage {
     public categoriaService: CategoriaService
   ) {}
 
+  itens: CategoriaDto[];
+  
   ionViewDidLoad() {
     this.categoriaService.findAll().subscribe(
       (response) => {
-        console.log(response);
+
+        this.itens = response;
+
       },
       (error) => {
         console.log(error);
