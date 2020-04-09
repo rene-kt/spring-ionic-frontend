@@ -1,26 +1,22 @@
-import { CategoriasPage } from './../categorias/categorias';
-import { Component } from '@angular/core';
-import { NavController, MenuController } from 'ionic-angular';
+import { CategoriasPage } from "./../categorias/categorias";
+import { Component } from "@angular/core";
+import { NavController, MenuController } from "ionic-angular";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html",
 })
 export class HomePage {
+  constructor(public navCtrl: NavController, public menu: MenuController) {}
 
-  constructor(public navCtrl: NavController, public menu: MenuController) {
-
+  login() {
+    this.navCtrl.setRoot("CategoriasPage");
   }
 
-  login(){
-    this.navCtrl.setRoot('CategoriasPage')
-  }
- 
   ionViewWillEnter() {
-  this.menu.swipeEnable(false);
+    this.menu.swipeEnable(false);
   }
   ionViewDidLeave() {
-  this.menu.swipeEnable(true);
+    this.menu.swipeEnable(true);
   }
-
 }
