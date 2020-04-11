@@ -9,5 +9,12 @@
 </ion-header>
 
 <ion-content padding>
-{{email}}
+  <ion-avatar>
+    <img class="circle" src = '../../assets/imgs/avatar.png'>
+    <!-- Quando for fazer com as imagens da aws, faça dessa forma -->
+
+    <!-- <img class="circle" [src] = "cliente?.imageUrl ||  '../../assets/imgs/avatar.png'"">-->
+  </ion-avatar>
+  <h2 text-center>{{cliente?.nome}} </h2>
+  <h2 text-center>{{cliente?.email}} </h2>
 </ion-content>
