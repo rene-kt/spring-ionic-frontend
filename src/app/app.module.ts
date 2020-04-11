@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from '@angular/common/http';
 import { AuthService } from '../services/AuthService';
 import { StorageService, StorageService } from '../services/storage.service';
+import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 
 
 //Decorator -> anotação que tem configurações para alterar a classe, o que faz 
@@ -36,6 +37,7 @@ import { StorageService, StorageService } from '../services/storage.service';
     StatusBar,
     SplashScreen,
     CategoriaService,
+    AuthInterceptorProvider,
     ErrorInterceptorProvider,
     AuthService,
     StorageService,

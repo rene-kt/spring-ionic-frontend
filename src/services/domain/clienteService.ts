@@ -15,14 +15,15 @@ export class ClienteService {
 
     findByEmail(email : string) : Observable<ClienteDto>{
 
-        let token = this.storageService.getLocalUser().token;
-        let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token});
-         
-        console.log(`${API_CONFIG.base_url}/clientes/email?value=${email}`)
-
        return this.http.get<ClienteDto>
-       (`${API_CONFIG.base_url}/clientes/email?value=${email}`,
-       {'headers': authHeader});
+       (`${API_CONFIG.base_url}/clientes/email?value=${email}`);
     }
+
+
+    //ATENÇÃO -> criar bucketBaseUrl em config/API_CONFIG.TS
+    // getImageFromBucket(id : string) : Observable<any>{
+    //     let url = `${API_CONFIG.bucketBaseUrl}/cp${id}.jpg`
+    //     return this.http.get(url, {responseType : 'blob'});
+    // }
 
 }
