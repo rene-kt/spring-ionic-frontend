@@ -19,6 +19,17 @@ export class ClienteService {
        (`${API_CONFIG.base_url}/clientes/email?value=${email}`);
     }
 
+    insert(obj : ClienteDto){
+        return this.http.post(
+            `${API_CONFIG.base_url}/clientes`,
+            obj, 
+            {
+                observe : 'response',
+                responseType : 'text'
+            }
+        )
+    }
+
 
     //ATENÇÃO -> criar bucketBaseUrl em config/API_CONFIG.TS
     // getImageFromBucket(id : string) : Observable<any>{

@@ -25,12 +25,12 @@
                 Tipo de cliente
             </ion-list-header>
             <ion-item>
-                <ion-label>Pessoa física</ion-label>
-                <ion-radio checked="true" value="1"></ion-radio>
+                <ion-label>Pessoa Física</ion-label>
+                <ion-radio checked="true" value=1></ion-radio>
             </ion-item>
             <ion-item>
-                <ion-label>Pessoa jurídica</ion-label>
-                <ion-radio value="2"></ion-radio>
+                <ion-label>Pessoa Jurídica</ion-label>
+                <ion-radio value=2></ion-radio>
             </ion-item>
         </ion-list>
 
@@ -104,7 +104,7 @@
             <ion-label stacked>Cidade*</ion-label>
             <ion-select formControlName="cidadeId">
 
-                <ion-option *ngFor="let cidade of cidades;" [value]="cidade.id">{{cidade.nome}}</ion-option>
+                <ion-option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.nome}}</ion-option>
 
 
             </ion-select>
