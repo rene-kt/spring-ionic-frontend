@@ -1,20 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Categorias</ion-title>
-  </ion-navbar>
+        <ion-title>Categorias</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-list>
-    <button ion-item *ngFor='let item of itens'>
+    <ion-list>
+        <button ion-item *ngFor='let item of itens' (click)="showProdutos()">
       <ion-label>{{item.nome}}</ion-label>
     </button>
 
 
-  </ion-list>
+    </ion-list>
 
 </ion-content>
