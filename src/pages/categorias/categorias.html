@@ -11,6 +11,11 @@
 
     <ion-list>
         <button ion-item *ngFor='let item of itens' (click)="showProdutos(item.id)">
+          <ion-thumbnail>
+
+            <img src="../../assets/imgs/sem_foto.png">
+
+          </ion-thumbnail>
       <ion-label>{{item.nome}}</ion-label>
     </button>
 

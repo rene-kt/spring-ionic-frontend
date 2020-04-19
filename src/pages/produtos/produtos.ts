@@ -31,7 +31,7 @@ export class ProdutosPage {
     .subscribe(response => {
 
       this.items = response['content'];
-
+      //this.loadImageUrl();
     },
     error => {
       
@@ -39,5 +39,22 @@ export class ProdutosPage {
     )
    
   };
+
+  // loadImageUrl(){
+  //   for (var i = 0; i<this.items.length;i++){
+
+  //     let item = this.items[i];
+
+  //     this.produtoService.getSmallImageFromBucket(item.id)
+  //     .subscribe(response =>{
+
+  //       item.imageUrl = `${API_CONFIG.bucket_baseUrl}/prod${item.id}-small.jpg`
+
+  //     },
+  //     error =>{}
+  //     )
+
+  //   }
+  // }
 
 }
