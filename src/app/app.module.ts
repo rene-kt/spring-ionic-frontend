@@ -14,6 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AuthService } from '../services/AuthService';
 import { StorageService } from '../services/storage.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
+import { ProdutoService } from '../services/domain/produtoService';
 
 
 //Decorator -> anotação que tem configurações para alterar a classe, o que faz 
@@ -42,6 +43,7 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
     AuthService,
     StorageService,
     ClienteService,
+    ProdutoService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

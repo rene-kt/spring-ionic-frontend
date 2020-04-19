@@ -1,3 +1,4 @@
+import { ProdutoService } from './../../services/domain/produtoService';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProdutoDto } from '../../models/produto.dto';
@@ -19,22 +20,24 @@ export class ProdutosPage {
 
   items: ProdutoDto[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public produtoService : ProdutoService) {
   }
 
+  
   ionViewDidLoad() {
-    this.items = [
-      {
-        id: "1",
-        nome: 'Mouse',
-        preco: 80.99
-      },
-      {
-        id: "2",
-        nome: 'Teclado',
-        preco: 100.00
-      }
-    ]
+    let cat_id = this.navParams.get('cat_id');
+    this.produtoService.findByCategoria(cat_id)
+    .subscribe(response => {
+
+      this.items = response['content'];
+
+    },
+    error => {
+      
+    }
+    )
+   
   };
 
 }
