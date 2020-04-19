@@ -40,6 +40,10 @@ export class ProdutosPage {
    
   };
 
+  showDetails(){
+    this.navCtrl.push('ProdutodetailPage')
+  }
+
   // loadImageUrl(){
   //   for (var i = 0; i<this.items.length;i++){
 
