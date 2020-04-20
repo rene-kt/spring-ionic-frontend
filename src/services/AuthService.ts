@@ -1,4 +1,4 @@
-import { StorageService } from './storage.service';
+import { StorageService } from './storageService';
 import { LocalUser } from './../models/local-user';
 import { HttpClient } from '@angular/common/http';
 import { CredenciaisDto } from './../models/crendeciais.dto';

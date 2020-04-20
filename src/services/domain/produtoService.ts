@@ -1,5 +1,5 @@
 // import { Observable } from 'rxjs/Rx';
-import { StorageService } from './../storage.service';
+import { StorageService } from '../storageService';
 import { API_CONFIG } from './../../config/api.config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";

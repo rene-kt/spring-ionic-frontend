@@ -8,7 +8,7 @@ import {
   HTTP_INTERCEPTORS,
 } from "@angular/common/http";
 import { Observable } from "rxjs/Rx";
-import { StorageService } from "../services/storage.service";
+import { StorageService } from "../services/storageService";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

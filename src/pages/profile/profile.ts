@@ -1,4 +1,4 @@
-import { StorageService } from "./../../services/storage.service";
+import { StorageService } from "../../services/storageService";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { ClienteDto } from "../../models/cliente.dto";

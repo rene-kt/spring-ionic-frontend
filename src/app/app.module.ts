@@ -1,3 +1,4 @@
+import { CartService } from './../services/domain/cartService';
 import { ClienteService } from './../services/domain/clienteService';
 import { ErrorInterceptorProvider } from './../interceptors/error-interceptor';
 import { CategoriaService } from './../services/domain/categoriaService';
@@ -12,7 +13,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from '@angular/common/http';
 import { AuthService } from '../services/AuthService';
-import { StorageService } from '../services/storage.service';
+import { StorageService } from '../services/storageService';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { ProdutoService } from '../services/domain/produtoService';
 
@@ -44,6 +45,7 @@ import { ProdutoService } from '../services/domain/produtoService';
     StorageService,
     ClienteService,
     ProdutoService,
+    CartService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
