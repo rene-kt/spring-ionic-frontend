@@ -1,3 +1,4 @@
+import { CartService } from './../../services/domain/cartService';
 import { ProdutoService } from "./../../services/domain/produtoService";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
@@ -14,7 +15,8 @@ export class ProdutodetailPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public prodService: ProdutoService
+    public prodService: ProdutoService,
+    public cartService: CartService
   ) {}
 
   ionViewDidLoad() {
@@ -25,6 +27,11 @@ export class ProdutodetailPage {
       // this.getImageUrlIfExists();
     },
     error => {})
+  }
+
+  addToCart(produto: ProdutoDto) {
+    this.cartService.addProduto(produto);
+    this.navCtrl.setRoot('CartPage');
   }
 
   //  getImageUrlIfExists() {
