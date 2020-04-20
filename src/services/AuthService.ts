@@ -1,3 +1,4 @@
+import { CartService } from './domain/cartService';
 import { StorageService } from './storageService';
 import { LocalUser } from './../models/local-user';
 import { HttpClient } from '@angular/common/http';
@@ -9,7 +10,8 @@ import { JwtHelper } from 'angular2-jwt';
 @Injectable()
 export class AuthService{
 
-    constructor (public http : HttpClient, public storage : StorageService){
+    constructor (public http : HttpClient, public storage : StorageService,
+        public cartService : CartService){
 
     }
     jwtHelper : JwtHelper = new JwtHelper();    
@@ -33,6 +35,7 @@ export class AuthService{
             email: this.jwtHelper.decodeToken(tok).sub
         };
         this.storage.setLocalUser(user);
+        this.cartService.createOrClearCart();
     }
 
     logout(){

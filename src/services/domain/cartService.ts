@@ -65,6 +65,10 @@ export class CartService {
         
         if(position != -1){
             cart.items[position].quantidade--;
+
+            if(cart.items[position].quantidade<1){
+                cart = this.removeProduto(produto);
+            }
         }
         this.storage.setCart(cart);
         return cart;
@@ -75,7 +79,7 @@ export class CartService {
         let sum = 0;
 
         for (let index = 0; index < cart.items.length; index++) {
-            sum += cart.items[index].produto.preco = cart.items[index].quantidade;
+            sum += cart.items[index].produto.preco * cart.items[index].quantidade;
         }
 
         return sum;
