@@ -1,3 +1,4 @@
+import { ProdutoDto } from './../../models/produto.dto';
 import { CartItem } from './../../models/cart-item.dto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -23,6 +24,23 @@ export class CartPage {
     this.items = cart.items;
     // this.loadImageUrl();
   }
+
+  removeItem(produto: ProdutoDto) {
+    this.items = this.cartService.removeProduto(produto).items;
+  }
+
+  increaseQuantity(produto: ProdutoDto) {
+    this.items = this.cartService.increaseQuantity(produto).items;
+  }
+
+  decreaseQuantity(produto: ProdutoDto) {
+    this.items = this.cartService.decreaseQuantity(produto).items;
+  }
+
+  total() : number {
+    return this.cartService.total();
+  }  
+
 
   
   // loadImageUrl(){
